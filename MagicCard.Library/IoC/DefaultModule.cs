@@ -3,14 +3,15 @@ using MagicCard.Library.Interfaces;
 
 namespace MagicCard.Library.IoC
 {
-  /// <summary>
-  /// AutoFac module - Allows access to interfaces and classes without making implementation public.
-  /// </summary>
-  public class DefaultModule : Module
-  {
-    protected override void Load(ContainerBuilder builder)
+    /// <summary>
+    /// Provides initial access to MagicCard interfaces.
+    /// </summary>
+    public class DefaultModule : Module
     {
-      builder.RegisterType<CardRepository>().As<ICardRepository>();
+        protected override void Load(ContainerBuilder builder)
+        {
+            // Requests for ICardRespository will create a new instance of CardRepository.
+            builder.RegisterType<CardRepository>().As<ICardRepository>();
+        }
     }
-  }
 }
