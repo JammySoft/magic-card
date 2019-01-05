@@ -23,9 +23,9 @@ namespace MagicCard.Library
         /// </summary>
         private readonly string _pin;
 
-        public Card(decimal openingBalance, String pin, string accountNumber)
+        public Card(string accountNumber, decimal startingBalance, string pin)
         {
-            this._balance = openingBalance;
+            this._balance = startingBalance;
             this._pin = pin;
             this.AccountNumber = accountNumber;
         }

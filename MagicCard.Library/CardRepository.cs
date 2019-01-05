@@ -41,7 +41,7 @@ namespace MagicCard.Library
 
             // TryAdd() will return false if another user has created a card on a separate thread, or
             // atomically add it.
-            var card = new Card(startingBalance, pin, accountNumber);
+            var card = new Card(accountNumber, startingBalance, pin);
             if (!_cards.TryAdd(accountNumber, card))
                 throw new ArgumentException("A card for that account already exists.", nameof(accountNumber));
 

@@ -12,7 +12,7 @@ namespace MagicCard.Library.Interfaces
         /// <param name="pin">The pin to assign to the card.</param>
         /// <returns>An <see cref="ICard"/> interface.</returns>
         /// <exception cref="ArgumentException">Thrown if the starting balance is negative or the pin is invalid.</exception>
-        /// <exception cref="ArgumentNullException">Account number or pin is not specified.</exception>
+        /// <exception cref="ArgumentNullException">Thrown if accountNumber or pin is not specified.</exception>
         /// <remarks>Used to create a new ICard.</remarks>
         ICard CreateCard(string accountNumber, decimal startingBalance, string pin);
 
@@ -21,6 +21,7 @@ namespace MagicCard.Library.Interfaces
         /// </summary>
         /// <param name="accountNumber">The account number to find the ICard for.</param>
         /// <returns>An ICard interface pointing to the card instance, or null if a card for that account cannot be found.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if accountNumber is not specified.</exception>
         ICard GetCard(string accountNumber);
     }
 }
